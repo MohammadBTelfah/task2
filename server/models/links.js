@@ -4,15 +4,15 @@ const linkSchema = new mongoose.Schema(
   {
     slug: {
       type: String,
-      required: true,          // ضروري
-      unique: true,            // ما يتكرر
-      lowercase: true,         // دايمًا حروف صغيرة
-      trim: true,              // يشيل المسافات قبل وبعد
-      match: /^[a-z0-9-]{3,64}$/ // فقط حروف صغيرة وأرقام و - وطول 3-64
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+      match: /^[a-z0-9-]{2,64}$/,
     },
     target: {
       type: String,
-      required: true,          // الرابط الأصلي ضروري
+      required: true,          
       trim: true
     },
     clicks: {

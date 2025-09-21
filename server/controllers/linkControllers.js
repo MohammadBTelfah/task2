@@ -46,9 +46,9 @@ exports.createLink = async (req, res) => {
       slug && slug.length ? normalizeSlug(slug) : randomSlug(6 + Math.floor(Math.random() * 3));
 
     // 3) Validate slug format
-    if (!finalSlug || !/^[a-z0-9-]{3,64}$/.test(finalSlug)) {
-      return res.status(400).json({ error: 'Invalid slug format' });
-    }
+if (!finalSlug || !/^[a-z0-9-]{2,64}$/.test(finalSlug)) {
+  return res.status(400).json({ error: 'Invalid slug format' });
+}
 
     // 4) Ensure uniqueness
     for (let i = 0; i < 5; i++) {

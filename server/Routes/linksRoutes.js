@@ -23,8 +23,4 @@ router.get('/:slug/stats', linksController.getLinkStats);
 // Reset click count for a link
 router.post('/:slug/reset-clicks', linksController.resetClickCount);
 
-// === Important ===
-// Redirect route should ALWAYS be last to avoid collisions
-router.get('/:slug', linksController.redirectBySlug);
-
 module.exports = router;
